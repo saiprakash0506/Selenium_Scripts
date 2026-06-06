@@ -15,12 +15,13 @@ wait = WebDriverWait(driver, 20)
 time.sleep(2)
 driver.get("https://www.airtel.in")
 search_box = driver.find_element(By.ID, "rechargeInput")
+time.sleep(3)
 search_box.send_keys(phonenumber)
 
 time.sleep(5)
 
 print(driver.current_url)
-
+time.sleep(5)
 Truly_unlimited = WebDriverWait(driver, 20).until(
     EC.element_to_be_clickable((By.ID, "tabsHeaderButton-10"))
 )
