@@ -14,7 +14,6 @@ driver.maximize_window()
 wait = WebDriverWait(driver, 20)
 time.sleep(2)
 driver.get("https://www.airtel.in")
-
 search_box = driver.find_element(By.ID, "rechargeInput")
 search_box.send_keys(phonenumber)
 
@@ -27,7 +26,7 @@ Truly_unlimited = WebDriverWait(driver, 20).until(
 )
 
 driver.execute_script("arguments[0].click();", Truly_unlimited)
-
+time.sleep(5)
 card = driver.find_element(
     By.XPATH,
     "/html/body/div[1]/div[2]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div[2]/div[11]/div/div[2]/div[2]/div/div[1]/div[2]",
@@ -35,18 +34,19 @@ card = driver.find_element(
 
 card.click()
 
-time.sleep(2)
+time.sleep(5)
 
 driver.execute_script("window.scrollBy(0, 500);")
 creditcard = driver.find_element(By.ID, "accordion-header-2")
 creditcard.click()
 
+time.sleep(3)
 WebDriverWait(driver, 20).until(
     EC.visibility_of_element_located((By.ID, "cardNumber"))
 ).send_keys(card_numberr)
-time.sleep(1)
+time.sleep(3)
 expiry = driver.find_element(By.ID, "cardExpiry").send_keys(expirydate)
-time.sleep(1)
+time.sleep(3)
 driver.find_element(By.ID, "cardCvv").send_keys(cvv)
 time.sleep(3)
 driver.find_element(By.CSS_SELECTOR, "[data-testid='makePaymentBtn']").click()

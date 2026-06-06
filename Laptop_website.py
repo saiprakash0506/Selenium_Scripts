@@ -5,7 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-
 driver = webdriver.Chrome()
 driver.maximize_window()
 wait = WebDriverWait(driver, 20)
