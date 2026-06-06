@@ -25,7 +25,7 @@ time.sleep(5)
 Truly_unlimited = WebDriverWait(driver, 20).until(
     EC.element_to_be_clickable((By.ID, "tabsHeaderButton-10"))
 )
-
+time.sleep(2)
 driver.execute_script("arguments[0].click();", Truly_unlimited)
 time.sleep(5)
 card = driver.find_element(
